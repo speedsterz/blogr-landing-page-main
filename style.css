@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+h1 {
+  font-weight: 700;
+  font-family: "Overpass", sans-serif;
+}
+h2,
+p {
+  font-family: "Overpass", sans-serif;
+}
+
+header {
+  background-image: url("./images/bg-pattern-intro-mobile.svg"),
+    linear-gradient(to right bottom, hsl(355, 100%, 74%), hsl(356, 100%, 66%));
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 250%;
+}
+@media (min-width: 768px) {
+  header {
+    background-image: url("./images/bg-pattern-intro-desktop.svg"),
+      linear-gradient(to right bottom, hsl(355, 100%, 74%), hsl(356, 100%, 66%));
+  }
+}
+.content {
+  margin-inline: auto;
+  width: 90%;
+  max-width: 1100px;
+}
+
+.svg_flip {
+  transform: rotate(180deg);
+}
+
+.footer_list li:hover {
+  text-decoration: underline;
+}
+header li:hover {
+  text-decoration: underline;
+}
+header li li:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+.sec_3 {
+  background-image: url("./images/bg-pattern-circles.svg"),
+    linear-gradient(to right bottom, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 600px, cover;
+}
+@media (min-width: 768px) {
+  .sec_3 {
+    background-position: center left;
+    background-size: 800px, cover;
+  }
+}

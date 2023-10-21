@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .btn {
+    @apply rounded-3xl px-4 py-2 font-bold;
+  }
+  .btn--white {
+    @apply bg-white text-light-red-200 hover:bg-light-red-100 hover:text-white;
+  }
+  .btn--transparent {
+    @apply bg-transparent text-white border border-white hover:bg-white hover:text-light-red-200;
+  }
+}

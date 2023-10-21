@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | [Blogr]</title>
+  </head>
+  <body class="min-h-screen" onclick="close_menu()">
+    <header class="overflow-hidden rounded-bl-large text-white pt-8 pb-24">
+      <div class="content z-10">
+        <div class="flex justify-between mb-16">
+          <div class="flex items-center">
+            <img
+              class="w-12 mr-12 self-center"
+              src="./images/logo.svg"
+              alt=""
+            />
+            <nav>
+              <ul class="hidden md:flex gap-8">
+                <li
+                  class="relative inline-flex justify-start items-center cursor-pointer"
+                  onclick="handleProductD(event)"
+                >
+                  Product<img
+                    class="ml-1"
+                    src="./images/icon-arrow-light.svg"
+                    alt=""
+                  />
+                  <div
+                    class="top-8 -left-6 shadow-xl mx-auto bg-white text-gray-blue-300 rounded-lg absolute hidden"
+                    id="ProductLiD"
+                    onclick="stop(event)"
+                  >
+                    <ul class="py-3 px-3 flex flex-col gap-2">
+                      <li class="cursor-pointer">Overview</li>
+                      <li class="cursor-pointer">Pricing</li>
+                      <li class="cursor-pointer">Marketplace</li>
+                      <li class="cursor-pointer">Features</li>
+                      <li class="cursor-pointer">Integrations</li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="relative inline-flex justify-start items-center cursor-pointer"
+                  onclick="handlCompanyD(event)"
+                >
+                  Company<img
+                    class="ml-1"
+                    src="./images/icon-arrow-light.svg"
+                    alt=""
+                  />
+                  <div
+                    class="top-8 shadow-xl mx-auto bg-white text-gray-blue-300 rounded-lg absolute hidden"
+                    id="CompanyLiD"
+                    onclick="stop(event)"
+                  >
+                    <ul class="py-3 px-3 flex flex-col gap-2">
+                      <li class="cursor-pointer">About</li>
+                      <li class="cursor-pointer">Team</li>
+                      <li class="cursor-pointer">Blog</li>
+                      <li class="cursor-pointer">Careers</li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="relative inline-flex justify-start items-center cursor-pointer"
+                  onclick="handleConnectD(event)"
+                >
+                  Connect<img
+                    class="ml-1"
+                    src="./images/icon-arrow-light.svg"
+                    alt=""
+                  />
+                  <div
+                    class="top-8 -left-6 shadow-xl mx-auto bg-white text-gray-blue-300 rounded-lg absolute hidden"
+                    id="ConnectLiD"
+                    onclick="stop(event)"
+                  >
+                    <ul class="py-3 px-3 flex flex-col gap-2">
+                      <li class="cursor-pointer">Contact</li>
+                      <li class="cursor-pointer">Newsletter</li>
+                      <li class="cursor-pointer">LinkedIn</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="flex gap-4">
+            <img
+              src="./images/icon-hamburger.svg"
+              class="cursor-pointer md:hidden"
+              alt=""
+              id="icon_mobile"
+              onclick="mobile_menu()"
+            /><a class="hidden md:block" href="#"
+              ><button class="btn btn--transparent border-none">
+                Login
+              </button></a
+            ><a class="hidden md:block" href="#"
+              ><button class="btn btn--white">Sign Up</button></a
+            >
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 items-center text-center">
+          <h1 class="text-4xl">A modern publishing platform</h1>
+          <p>Grow your audience and build your online brand</p>
+          <div class="flex gap-4 mt-4">
+            <button class="btn btn--white">Start for Free</button
+            ><button class="btn btn--transparent">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- menu mobile -->
+      <div
+        id="mobile_menu"
+        class="hidden md:hidden flex-col items-center justify-center text-center gap-1 bg-white text-black rounded-lg w-9/12 mx-auto py-6 font-bold absolute top-20 left-14"
+      >
+        <ul class="flex flex-col gap-4 text-gray-blue-300 font-Overpass">
+          <li
+            class="inline-flex justify-center items-center cursor-pointer"
+            onclick="handleProduct()"
+          >
+            Product<svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10"
+              height="7"
+              class="ml-1"
+              id="Product"
+            >
+              <path
+                fill="red"
+                stroke="#FFF"
+                stroke-width="1"
+                opacity="1"
+                d="M1 1l4 4 4-4"
+              />
+            </svg>
+          </li>
+
+          <li
+            class="shadow-xl mx-auto bg-gray-blue-100 text-gray-blue-200 font-thin rounded-lg hidden"
+            id="ProductLi"
+          >
+            <ul class="py-3 px-12 flex flex-col gap-3">
+              <li class="cursor-pointer">Overview</li>
+              <li class="cursor-pointer">Pricing</li>
+              <li class="cursor-pointer">Marketplace</li>
+              <li class="cursor-pointer">Features</li>
+              <li class="cursor-pointer">Integrations</li>
+            </ul>
+          </li>
+
+          <li
+            class="inline-flex justify-center items-center cursor-pointer"
+            onclick="handleCompany()"
+          >
+            Company<svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10"
+              height="7"
+              class="ml-1"
+              id="Company"
+            >
+              <path
+                class="w-8 h-8"
+                fill="red"
+                stroke="#FFF"
+                stroke-width="1"
+                opacity="0.75"
+                d="M1 1l4 4 4-4"
+              />
+            </svg>
+          </li>
+
+          <li
+            class="shadow-xl mx-auto bg-gray-blue-100 text-gray-blue-200 font-thin rounded-lg hidden"
+            id="CompanyLi"
+          >
+            <ul class="py-3 px-12 flex flex-col gap-3">
+              <li class="cursor-pointer">About</li>
+              <li class="cursor-pointer">Team</li>
+              <li class="cursor-pointer">Blog</li>
+              <li class="cursor-pointer">Careers</li>
+            </ul>
+          </li>
+
+          <li
+            class="inline-flex justify-center items-center cursor-pointer"
+            onclick="handleConnect()"
+          >
+            Connect<svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10"
+              height="7"
+              class="ml-1"
+              id="Connect"
+            >
+              <path
+                class="w-8 h-8"
+                fill="red"
+                stroke="#FFF"
+                stroke-width="1"
+                opacity="0.75"
+                d="M1 1l4 4 4-4"
+              />
+            </svg>
+          </li>
+          <li
+            class="shadow-xl mx-auto bg-gray-blue-100 text-gray-blue-200 font-thin rounded-lg hidden"
+            id="ConnectLi"
+          >
+            <ul class="py-3 px-12 flex flex-col gap-3">
+              <li class="cursor-pointer">Contact</li>
+              <li class="cursor-pointer">Newsletter</li>
+              <li class="cursor-pointer">LinkedIn</li>
+            </ul>
+          </li>
+        </ul>
+        <hr class="mt-4 mb-4" />
+        <ul class="flex flex-col gap-4">
+          <li class="cursor-pointer font-Overpass">login</li>
+          <li>
+            <button
+              class="font-Overpass btn bg-gradient-to-r from-light-red-100 to-light-red-200 text-white"
+            >
+              Sign Up
+            </button>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- section 2 -->
+      <section class="mt-16">
+        <h1 class="text-center font-bold text-3xl mb-8 md:mb-16 text-dark-blue">
+          Designed for the future
+        </h1>
+        <div class="w-[90%] mx-auto md:mr-0">
+          <div class="flex flex-col md:flex-row-reverse gap-4 md:relative">
+            <div class="mx-auto w-96 md:w-auto flex-1">
+              <!-- <img
+                class="md:absolute md:w-[80%] md:max-w-[700px] md:-top-32 md:-right-60"
+                src="./images/illustration-editor-desktop.svg"
+                alt=""
+              /> -->
+              <picture>
+                <source
+                  class="md:absolute md:w-[80%] md:max-w-[700px] md:-top-32 md:-right-60"
+                  srcset="./images/illustration-editor-desktop.svg"
+                  media="(min-width:768px)"
+                />
+                <img
+                  class="md:absolute md:w-[80%] md:max-w-[700px] md:-top-32 md:-right-60"
+                  src="./images/illustration-editor-mobile.svg"
+                />
+              </picture>
+            </div>
+
+            <div
+              class="xl:ml-28 2xl:ml-48 flex flex-col gap-8 text-center pt-10 md:text-left max-w-[80%] mx-auto md:max-w-none flex-1"
+            >
+              <div>
+                <h2 class="text-2xl text-dark-blue font-bold mb-2">
+                  Introducing an extensible editor
+                </h2>
+                <p class="text-gray-blue-200">
+                  Blogr features an exceedingly intuitive interface which lets
+                  you focus on one thing: creating content. The editor supports
+                  management of multiple blogs and allows easy manipulation of
+                  embeds such as images, videos, and Markdown. Extensibility
+                  with plugins and themes provide easy ways to add functionality
+                  or change the looks of a blog.
+                </p>
+              </div>
+              <div>
+                <h2 class="text-2xl text-dark-blue font-bold mb-2">
+                  Robust content management
+                </h2>
+                <p class="text-gray-blue-200">
+                  Flexible content management enables users to easily move
+                  through posts. Increase the usability of your blog by adding
+                  customized categories, sections, format, or flow. With this
+                  functionality, you’re in full control.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- section 3 -->
+      <section
+        class="sec_3 mt-64 pb-16 rounded-bl-large rounded-tr-large bg-gradient-to-br from-grad-blue-100 to-grad-blue-200"
+      >
+        <div class="flex flex-col relative mx-auto md:flex-row">
+          <img
+            src="./images/illustration-phones.svg"
+            alt=""
+            class="absolute -top-52 left-8 w-96 md:-top-16 md:left-0 2xl:left-24 md:w-96"
+          />
+          <div
+            class="text-white text-center content pt-52 md:py-12 md:text-left md:pl-80"
+          >
+            <h1 class="text text-3xl mb-4">State of the Art Infrastructure</h1>
+            <p>
+              With reliability and speed in mind, worldwide data centers provide
+              the backbone for ultra-fast connectivity. This ensures your site
+              will load instantly, no matter where your readers are, keeping
+              your site competitive.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- section 4 -->
+
+      <section class="mt-16 md:mt-48">
+        <div class="w-[90%] mx-auto md:ml-0">
+          <div class="flex flex-col md:flex-row gap-8 md:relative">
+            <div class="mx-auto w-96 md:w-auto flex-1">
+              <picture>
+                <source
+                  srcset="./images/illustration-laptop-desktop.svg"
+                  media="(min-width:768px)"
+                />
+                <img
+                  class="md:absolute md:w-[75%] md:max-w-[700px] md:-top-32 md:-left-40"
+                  src="./images/illustration-laptop-mobile.svg"
+                />
+              </picture>
+            </div>
+
+            <div
+              class="flex flex-col gap-8 text-center md:text-left max-w-[80%] mx-auto md:max-w-none flex-1 2xl:mr-36"
+            >
+              <div>
+                <h2 class="text-2xl text-dark-blue font-bold mb-2">
+                  Free, open, simple
+                </h2>
+                <p class="text-gray-blue-200">
+                  Blogr is a free and open source application backed by a large
+                  community of helpful developers. It supports features such as
+                  code syntax highlighting, RSS feeds, social media integration,
+                  third-party commenting tools, and works seamlessly with Google
+                  Analytics. The architecture is clean and is relatively easy to
+                  learn.
+                </p>
+              </div>
+              <div>
+                <h2 class="text-2xl text-dark-blue font-bold mb-2">
+                  Powerful tooling
+                </h2>
+                <p class="text-gray-blue-200">
+                  Batteries included. We built a simple and straightforward CLI
+                  tool that makes customization and deployment a breeze, but
+                  capable of producing even the most complicated sites.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+
+    <footer class="mt-48 bg-gray-blue-300 font-Overpass">
+      <div
+        class="footer_list content flex flex-col md:flex-row py-16 items-center md:items-start md:text-left md:gap-28 gap-8 text-gray-blue-100 text-center"
+      >
+        <img class="w-20 md:mr-16" src="./images/logo.svg" alt="" />
+        <div>
+          <ul class="flex flex-col gap-2">
+            <li class="text-white mb-3 cursor-pointer font-bold">Product</li>
+            <li class="cursor-pointer">Overview</li>
+            <li class="cursor-pointer">Pricing</li>
+            <li class="cursor-pointer">Marketplace</li>
+            <li class="cursor-pointer">Features</li>
+            <li class="cursor-pointer">Integrations</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="flex flex-col gap-2">
+            <li class="text-white mb-3 cursor-pointer font-bold">Company</li>
+            <li class="cursor-pointer">About</li>
+            <li class="cursor-pointer">Team</li>
+            <li class="cursor-pointer">Blog</li>
+            <li class="cursor-pointer">Careers</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="flex flex-col gap-2">
+            <li class="text-white mb-3 cursor-pointer font-bold">Connect</li>
+            <li class="cursor-pointer">Contact</li>
+            <li class="cursor-pointer">Newsletter</li>
+            <li class="cursor-pointer">LinkedIn</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
